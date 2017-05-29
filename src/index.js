@@ -49,7 +49,7 @@ export default function blockBreakoutPlugin (options = {}) {
   const doubleBreakoutBlocks = options.doubleBreakoutBlocks || defaults.doubleBreakoutBlocks
 
   return {
-    handleReturn (e, { getEditorState, setEditorState }) {
+    handleReturn (e, state, { getEditorState, setEditorState }) {
       const editorState = getEditorState()
       const currentBlockType = RichUtils.getCurrentBlockType(editorState)
       const isSingleBreakoutBlock = breakoutBlocks.indexOf(currentBlockType) > -1
